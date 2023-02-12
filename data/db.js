@@ -49,7 +49,6 @@ const sportSchema = new Schema({
 });
 
 const exerciseTypeSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     exercise: {
         type: String,
         required: true,
