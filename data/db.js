@@ -7,7 +7,6 @@ mongoose.connect("mongodb://localhost:27017/", {
 });
 
 const userSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     firstName: {
         type: String,
         required: true,
@@ -23,6 +22,10 @@ const userSchema = new Schema({
     sport: {
         type: String,
         required: false,
+    },
+    sex: {
+        type: String,
+        required: true,
     },
     height: {
         type: Number,

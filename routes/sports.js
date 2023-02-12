@@ -4,14 +4,14 @@ var { Sport } = require('../data/db.js');
 
 /* GET sports listing. */
 router.get('/', function(req, res, next) {
-  res.send('send list of all sports');
+  res.send('Send list of all sports');
 });
 
-/* POST users listing. */
+/* POST sports listing. */
 router.post('/', async function(req, res, next) {
-  const newUser = new Sport({firstName: "Jessica", lastName: "Lim", year: 5, sport: 'Field Hockey'})
-  await newUser.save();
-  res.send('respond with a resource');
+  const newSport = new Sport();
+  await newSport.save();
+  res.send('Successfully send sports');
 });
 
 module.exports = router;
