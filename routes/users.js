@@ -25,7 +25,7 @@ router.get('/:id', async function(req, res, next) {
     const user = await User.findOne({id: req.params.id})
     res.send({user: user, requestStatus: true});
   } catch(err) {
-    console.log(err)
+    console.log(err);
     res.status(404).send({requestStatus: false});
   }
 });
@@ -34,6 +34,7 @@ router.get('/:id', async function(req, res, next) {
 router.post('/', async function(req, res, next) {
   try {
     const newUser = new User({firstName: req.body.firstName, lastName: req.body.lastName, year: req.body.year, sport: req.body.sport ? req.body.sport : ''})
+    //{ "firstName": "Eshaan", "lastName": "C", "year": 4, "sport": "soccer" }
     await newUser.save();
     res.send('New user created');
   } catch(err) {

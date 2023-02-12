@@ -38,7 +38,6 @@ const userSchema = new Schema({
 });
 
 const sportSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     sport: {
         type: String,
         required: true,
