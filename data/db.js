@@ -60,9 +60,8 @@ const exerciseTypeSchema = new Schema({
 });
 
 const recordSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     userId: {
-        type: Schema.Types.ObjectId,
+        type: String,
         required: true,
     },
     exerciseType: {
