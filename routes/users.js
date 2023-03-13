@@ -50,7 +50,7 @@ router.get('/all', async function(req, res, next) {
 /* GET users with specific id */
 router.get('/:id', async function(req, res, next) {
   try {
-    const user = await User.findOne({id: req.params.id})
+    const user = await User.findOne({_id: req.params.id})
     res.send({user: user, requestStatus: true});
   } catch(err) {
     console.log(err);

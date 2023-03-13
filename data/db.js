@@ -70,7 +70,7 @@ const recordSchema = new Schema({
     },
     side: {
         type: String,
-        required: false,
+        required: true,
     },
     max: {
         type: Number,

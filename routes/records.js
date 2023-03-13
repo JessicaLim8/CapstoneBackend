@@ -7,8 +7,9 @@ router.get('/', async function(req, res, next) {
   try {
     let queryParameters = {};
     let idParam = req.query.id;
-    let exerciseParam = req.query.exerciseType;
+    let exerciseParam = req.query.exercise;
     let userParam = req.query.userId;
+    let sideParam = req.query.side;
     if (idParam) {
       queryParameters["_id"] = idParam;
     }
@@ -17,6 +18,9 @@ router.get('/', async function(req, res, next) {
     }
     if (userParam) {
       queryParameters["userId"] = userParam;
+    }
+    if (sideParam) {
+      queryParameters["side"] = sideParam;
     }
     const response = await Record.find(queryParameters);
     let recordsList = [...response];
@@ -53,7 +57,7 @@ router.get('/:id', async function(req, res, next) {
 /* POST records listing. */
 router.post('/', async function(req, res, next) {
   try {
-    const newRecord = new Record({userId: req.body.uid, exerciseType: req.body.exerciseType, side: req.body.side, max: req.body.max, avg: req.body.avg, data: req.body.data, date: new Date()});
+    const newRecord = new Record({userId: req.body.uid, exerciseType: req.body.exerciseType, side: req.body.side, max: req.body.max, avg: req.body.avg, data: req.body.data, date: req.body.date ? new Date(req.body.data) : new Date()});
     await newRecord.save();
     res.send('New record created');
   } catch(err) {
