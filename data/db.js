@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-mongoose.connect("mongodb://localhost:27017/", {
+mongoose.connect("mongodb+srv://Jess:6wg2GHA2nw0iLOX0@cluster0.fqvs2po.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
