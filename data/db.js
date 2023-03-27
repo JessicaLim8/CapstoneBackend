@@ -62,6 +62,7 @@ const exerciseTypeSchema = new Schema({
 const recordSchema = new Schema({
     userId: {
         type: String,
+        ref: 'user',
         required: true,
     },
     exerciseType: {
