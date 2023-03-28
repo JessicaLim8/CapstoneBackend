@@ -17,11 +17,11 @@ const userSchema = new Schema({
     },
     year: {
         type: Number,
-        required: true,
+        required: false,
     },
     sport: {
         type: String,
-        required: false,
+        required: true,
     },
     sex: {
         type: String,
